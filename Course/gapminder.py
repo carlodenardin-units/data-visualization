@@ -13,7 +13,7 @@ df_info = pd.read_csv('gapminder-info.csv', sep = ',', index_col = 0)
 # Colors #
 ##########
 color_dict = {
-    'Asia': '#ff5872',
+    'Asia': '#ff798e',
     'Europe': '#98e446',
     'Africa': '#5fd2e6',
     'Americas': '#fce64d',
@@ -33,6 +33,7 @@ fig = px.scatter(
     log_x = True,
     hover_name = 'Country',
     hover_data = {c: False for c in df.columns},
+    color_discrete_map = color_dict,
 )
 
 fig.update_layout(
