@@ -24,7 +24,7 @@ df = df.sort_values(['Year', 'Population'], ascending = [True, False])
 
 # Bubble chart
 fig = px.scatter(
-    df.query('Year==2020'),
+    df.query('Year>=2000'),
     x = 'Income',
     y = 'Life expectancy',
     color = 'Region',
@@ -34,14 +34,20 @@ fig = px.scatter(
     hover_name = 'Country',
     hover_data = {c: False for c in df.columns},
     color_discrete_map = color_dict,
+    animation_frame = 'Year',
+    animation_group = 'Country',
 )
 
 fig.update_layout(
     plot_bgcolor = 'white',
+    title = 'Gapminder<br><sup>Data from gapminder.org, CC-BY license</sup>',
+    font = dict(color = 'dimgray'),
+    legend = dict(
+        itemsizing='trace'
+    ),
 )
-
-fig.update_xaxes(showline = True, linecolor = 'dimgrey', gridcolor = 'lightgrey', linewidth = 1)
-fig.update_yaxes(showline = True, linecolor = 'dimgrey', gridcolor = 'lightgrey', linewidth = 1)
-fig.update_traces(marker = dict(opacity = 0.8, line = dict(width = 1, color = 'dimgrey')))
+fig.update_xaxes(showline = True, linecolor = 'dimgrey', gridcolor = 'lightgrey', linewidth = 1, showspikes = True, spikecolor = 'dimgray', spikethickness = 1)
+fig.update_yaxes(showline = True, linecolor = 'dimgrey', gridcolor = 'lightgrey', linewidth = 1, showspikes = True, spikecolor = 'dimgray', spikethickness = 1)
+fig.update_traces(marker = dict(opacity = 0.9, line = dict(width = 1, color = 'dimgrey')))
 
 fig.show()
