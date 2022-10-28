@@ -14,9 +14,9 @@ df_info = pd.read_csv('gapminder-info.csv', sep = ',', index_col = 0)
 ##########
 color_dict = {
     'Asia': '#ff798e',
-    'Europe': '#98e446',
-    'Africa': '#5fd2e6',
-    'Americas': '#fce64d',
+    'Europe': '#ffeb33',
+    'Africa': '#33dded',
+    'Americas': '#98ef33',
 }
 
 # Smaller year will be first and then smaller Population will be first
