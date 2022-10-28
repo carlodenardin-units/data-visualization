@@ -8,7 +8,8 @@ fig = px.scatter(
     df,
     x = 'Income',
     y = 'Life expectancy',
-    color = 'Region'
+    color = 'Region',
+    animation_frame = 'Year',
 )
 
-print(fig)
+fig.show()
