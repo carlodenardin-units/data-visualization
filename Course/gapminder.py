@@ -42,6 +42,6 @@ fig.update_layout(
 
 fig.update_xaxes(showline = True, linecolor = 'dimgrey', gridcolor = 'lightgrey', linewidth = 1)
 fig.update_yaxes(showline = True, linecolor = 'dimgrey', gridcolor = 'lightgrey', linewidth = 1)
-fig.update_traces(marker = dict(opacity = 1))
+fig.update_traces(marker = dict(opacity = 0.8, line = dict(width = 1, color = 'dimgrey')))
 
 fig.show()
